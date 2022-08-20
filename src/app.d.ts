@@ -1,7 +1,7 @@
 /// <reference types="openplayerjs" />
 
 // Need export for override global type
-export declare global {
+declare global {
   interface Window {
     __TAURI__: boolean
   }
