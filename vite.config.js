@@ -1,8 +1,11 @@
-import { sveltekit } from '@sveltejs/kit/vite';
+import { sveltekit } from '@sveltejs/kit/vite'
+import unocss from 'unocss/vite'
+
+import transformerDirective from '@unocss/transformer-directives'
 
 /** @type {import('vite').UserConfig} */
 const config = {
-	plugins: [sveltekit()]
-};
+  plugins: [sveltekit(), unocss()],
+}
 
-export default config;
+export default config
