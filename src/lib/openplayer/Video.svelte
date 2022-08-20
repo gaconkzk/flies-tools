@@ -1,5 +1,6 @@
 <script lang="ts">
   import type Player from 'openplayerjs'
+  import OpenPlayerJs from 'openplayerjs?client'
   import { nanoid } from 'nanoid'
   import { onMount, onDestroy } from 'svelte'
 
@@ -23,11 +24,9 @@
   )
 
   onMount(async () => {
-    // client load - no ssr - for this case
-    const pjs = await import('openplayerjs')
     if (container) {
       try {
-        player = new pjs.default(container)
+        player = new OpenPlayerJs(container)
         await player.init()
       } catch (err) {
         console.error(err)

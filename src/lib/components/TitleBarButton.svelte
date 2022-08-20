@@ -2,7 +2,7 @@
   const { src: imgSrc, alt: btnAlt, ...restProps } = $$props
 </script>
 
-<div class="titlebar-button" {...restProps}>
+<div class="titlebar-button" {...restProps} on:click>
   <img src={imgSrc} alt={btnAlt} />
 </div>
 
