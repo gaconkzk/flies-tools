@@ -1,5 +1,12 @@
 /// <reference types="openplayerjs" />
 
+// Need export for override global type
+export declare global {
+  interface Window {
+    __TAURI__: boolean
+  }
+}
+
 // See https://kit.svelte.dev/docs/types#app
 // for information about these interfaces
 // and what to do when importing types
