@@ -7,6 +7,7 @@
   import { DEFAULT_CONFIG as defaultConfig } from '../constant'
 
   import Hls from 'hls.js'
+  import RingLoader from '$lib/components/RingLoader.svelte'
 
   export let bgImg: string | null = null
   export let src: string | null = null
@@ -14,6 +15,8 @@
 
   let container: HTMLMediaElement
   let player: Plyr
+
+  let loading = true
 
   // let config = Object.assign({}, { ...defaultConfig }, {})
 
@@ -24,11 +27,10 @@
 
         hls.loadSource(src || '')
         hls.attachMedia(container)
-        // hls.on(Hls.Events.MANIFEST_PARSED, function () {
-        //   container.play()
-        // })
       }
       player = new Plyr(container)
+
+      loading = false
     }
   })
 
@@ -37,7 +39,13 @@
   })
 </script>
 
-<!-- svelte-ignore a11y-media-has-caption -->
-<video bind:this={container} id="pl_{nanoid()}" data-poster={bgImg} {src} {preload}>
-  <slot />
-</video>
+<div>
+  {#if loading}
+    <RingLoader />
+  {/if}
+
+  <!-- svelte-ignore a11y-media-has-caption -->
+  <video bind:this={container} id="pl_{nanoid()}" data-poster={bgImg} {src} {preload}>
+    <slot />
+  </video>
+</div>

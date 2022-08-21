@@ -27,6 +27,6 @@
       },
     ]}
     bgImg="https://hips.hearstapps.com/hmg-prod/images/quotes-about-love2-1640022840.jpg"
-    class="h-400px w-600px justify-center"
+    class="w-320px h-200px justify-center items-center flex"
   />
 </main>
