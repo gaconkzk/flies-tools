@@ -8,6 +8,8 @@ specifiers:
   '@tauri-apps/cli': ^1.0.5
   '@typescript-eslint/eslint-plugin': ^5.27.0
   '@typescript-eslint/parser': ^5.27.0
+  '@unocss/preset-uno': ^0.45.8
+  '@unocss/preset-web-fonts': ^0.45.8
   '@unocss/reset': ^0.45.8
   '@unocss/transformer-directives': ^0.45.8
   eslint: ^8.16.0
@@ -36,6 +38,8 @@ devDependencies:
   '@tauri-apps/cli': 1.0.5
   '@typescript-eslint/eslint-plugin': 5.33.1_vsoshirnpb7xw6mr7xomgfas2i
   '@typescript-eslint/parser': 5.33.1_4rv7y5c6xz3vfxwhbrcxxi73bq
+  '@unocss/preset-uno': 0.45.8
+  '@unocss/preset-web-fonts': 0.45.8
   '@unocss/reset': 0.45.8
   '@unocss/transformer-directives': 0.45.8
   eslint: 8.22.0

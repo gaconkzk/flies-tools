@@ -1,11 +1,12 @@
 <script lang="ts">
-  import { onMount } from 'svelte'
   import { appWindow } from '@tauri-apps/api/window?client'
 
   import TitleBarButton from './TitleBarButton.svelte'
+  import { useTauri } from '$lib/hooks/useTauri'
   const { class: containerClass, ...restProps } = $$props
 
-  let isTauri = false
+  const { isTauri } = useTauri()
+
   let maximized = false
 
   const toggleMaximize = async () => {
@@ -16,13 +17,9 @@
       console.error(err)
     }
   }
-
-  onMount(() => {
-    isTauri = !!window.__TAURI__
-  })
 </script>
 
-{#if isTauri}
+{#if $isTauri}
   <div
     data-tauri-drag-region
     class="titlebar {containerClass}"
@@ -52,7 +49,7 @@
 
 <style>
   .titlebar {
-    @apply fixed h-30px top-0 left-0 right-0 select-none flex justify-end bg-cyan-300;
+    @apply fixed h-30px top-0 left-0 right-0 select-none flex justify-end bg-cyan-300 opacity-25;
   }
   .titlebar-rounded {
     @apply rounded-t-2xl;
