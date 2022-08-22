@@ -5,14 +5,13 @@
   import { useTauri } from '$lib/hooks/useTauri'
   const { class: containerClass, ...restProps } = $$props
 
-  const { isTauri } = useTauri()
-
-  let maximized = false
+  const { isTauri, maximize } = useTauri()
 
   const toggleMaximize = async () => {
     try {
       await appWindow.toggleMaximize()
-      maximized = !maximized
+      const maximized = await appWindow.isMaximized()
+      maximize.update(() => maximized)
     } catch (err) {
       console.error(err)
     }
@@ -23,7 +22,7 @@
   <div
     data-tauri-drag-region
     class="titlebar {containerClass}"
-    class:titlebar-rounded={!maximized}
+    class:titlebar-rounded={!$maximize}
     {...restProps}
   >
     <TitleBarButton
@@ -53,5 +52,8 @@
   }
   .titlebar-rounded {
     @apply rounded-t-2xl;
+  }
+  .topleft-round {
+    @apply rounded-tl-2xl;
   }
 </style>

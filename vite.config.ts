@@ -3,6 +3,7 @@ import presetUno from '@unocss/preset-uno'
 import presetWebFonts from '@unocss/preset-web-fonts'
 import { presetScrollbar } from 'unocss-preset-scrollbar'
 import transformerDirective from '@unocss/transformer-directives'
+import { extractorSvelte } from '@unocss/core'
 
 import { svelte } from '@sveltejs/vite-plugin-svelte'
 import { defineConfig } from 'vite'
@@ -19,8 +20,8 @@ const hexToRGBA = (hex: string, opacity: number): string => {
 
 export default defineConfig({
   plugins: [
-    svelte(),
     unocss({
+      extractors: [extractorSvelte],
       presets: [
         presetUno(),
         presetWebFonts({
@@ -63,6 +64,7 @@ export default defineConfig({
           'hover:before:(bg-red-400 opacity-75 transform-scale-y-100)',
       },
     }),
+    svelte(),
   ],
   resolve: {
     alias: {

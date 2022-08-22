@@ -14,6 +14,7 @@ For now is just a experiment project
 - ~~[x] `SvelteKit` default use ssr so some client only modules can't be load, and tauri not support ssr, just static. So we need to disable ssr using `hooks.js` and use `@sveltejs/adapter-static` for build~~ Removed `SvelteKit` because ssr or server render is not my target. It also cause video players can't run on `Safari`
 - ~~[x] Similar, we also need to use clients mode when import browser only library, so I decided use `vite-plugin-iso-import` for adding `?client` suffix into import statement, there some other ways but this one is the best (for now use this for `@tauri-apps/api` and `openplayerjs`)~~ Removed `vite-plugin-iso-import` I don't need this anymore, I'm client only
 - main's `index.html` MUST in root folder - for multiple pages worked
+- uno variants can't be use in css @apply rule - use it in class attribute of dom instead
 
 ## Plan
 

@@ -7,10 +7,12 @@ specifiers:
   '@tsconfig/svelte': ^3.0.0
   '@typescript-eslint/eslint-plugin': ^5.33.1
   '@typescript-eslint/parser': ^5.33.1
+  '@unocss/core': ^0.45.12
   '@unocss/preset-uno': ^0.45.9
   '@unocss/preset-web-fonts': ^0.45.9
   '@unocss/reset': ^0.45.9
   '@unocss/transformer-directives': ^0.45.9
+  '@unocss/transformer-variant-group': ^0.45.12
   eslint: ^8.22.0
   eslint-config-prettier: ^8.5.0
   eslint-plugin-svelte3: ^4.0.0
@@ -36,10 +38,12 @@ devDependencies:
   '@tsconfig/svelte': 3.0.0
   '@typescript-eslint/eslint-plugin': 5.33.1_vsoshirnpb7xw6mr7xomgfas2i
   '@typescript-eslint/parser': 5.33.1_4rv7y5c6xz3vfxwhbrcxxi73bq
+  '@unocss/core': 0.45.12
   '@unocss/preset-uno': 0.45.9
   '@unocss/preset-web-fonts': 0.45.9
   '@unocss/reset': 0.45.9
   '@unocss/transformer-directives': 0.45.9
+  '@unocss/transformer-variant-group': 0.45.12
   eslint: 8.22.0
   eslint-config-prettier: 8.5.0_eslint@8.22.0
   eslint-plugin-svelte3: 4.0.0_laaqauvsmoyypsiqkozwyi2fn4
@@ -505,6 +509,10 @@ packages:
     resolution: {integrity: sha512-DJ3Uk2ePVXvV1qQmgoLK44aqB6f0s+naOEvouI97nzVXDZgxDQPBxIPB/L4vvE4U+gQxEiHwwE3gJ75iPqVzXw==}
     dev: true
 
+  /@unocss/core/0.45.12:
+    resolution: {integrity: sha512-21ri/IF/r82lYJTSZ8kBwesSPysaMopMbPy6AtHgCQIHQPsdx6lOzg9Wq5rh+5IjXywXSmuRMuHiYSPjI0yxdw==}
+    dev: true
+
   /@unocss/core/0.45.9:
     resolution: {integrity: sha512-ZUHgE8q7oYNFW+lPyH71n2weR9mhYL4WY/FL6K+sa9mVEYA4Lq15sCKTB+fbowB4CDLxZ8BEGNX3I9Qpn46lHA==}
     dev: true
@@ -603,6 +611,12 @@ packages:
     dependencies:
       '@unocss/core': 0.45.9
       css-tree: 2.2.1
+    dev: true
+
+  /@unocss/transformer-variant-group/0.45.12:
+    resolution: {integrity: sha512-ZyvCF63gs6pRm+SxZ7Ixg9uwIYHnKiT7XaTXVWqh/TPDtBm2AGZ+cVIvuPk7ekiofVHSh+iPFJJDTK/WT1rvZg==}
+    dependencies:
+      '@unocss/core': 0.45.12
     dev: true
 
   /@unocss/transformer-variant-group/0.45.9:
