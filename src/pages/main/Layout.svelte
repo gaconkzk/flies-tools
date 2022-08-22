@@ -3,16 +3,10 @@
   import Main from './Main.svelte'
 </script>
 
-<div id="flies-tools">
-  <TitleBar />
-  <Main />
-</div>
+<TitleBar />
+<Main />
 
 <style>
-  #flies-tools {
-    @apply bg-gray-800 w-full h-full;
-  }
-
   /* .rounded {
     @apply rounded-t-2xl pt-30px;
   } */
