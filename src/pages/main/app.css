@@ -17,6 +17,6 @@ h5 {
   @apply text-xl;
 }
 
-#root {
+#app {
   @apply w-screen h-screen;
 }

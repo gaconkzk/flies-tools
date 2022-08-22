@@ -10,7 +10,7 @@
 
 <style>
   #flies-tools {
-    @apply bg-gray-800;
+    @apply bg-gray-800 w-full h-full;
   }
 
   /* .rounded {
