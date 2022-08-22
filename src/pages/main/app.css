@@ -1,5 +1,5 @@
 body {
-  @apply bg-transparent text-light-800 font-sans;
+  @apply bg-transparent text-light-800 font-sans overflow-hidden;
 }
 h1 {
   @apply text-5xl;

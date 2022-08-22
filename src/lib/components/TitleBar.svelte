@@ -49,7 +49,7 @@
 
 <style>
   .titlebar {
-    @apply fixed h-30px top-0 left-0 right-0 select-none flex justify-end bg-cyan-300 opacity-25;
+    @apply fixed h-30px top-0 left-0 right-0 select-none flex justify-end bg-cyan-300;
   }
   .titlebar-rounded {
     @apply rounded-t-2xl;

@@ -1,6 +1,7 @@
 import unocss from 'unocss/vite'
 import presetUno from '@unocss/preset-uno'
 import presetWebFonts from '@unocss/preset-web-fonts'
+import { presetScrollbar } from 'unocss-preset-scrollbar'
 import transformerDirective from '@unocss/transformer-directives'
 
 import { svelte } from '@sveltejs/vite-plugin-svelte'
@@ -9,9 +10,9 @@ import { defineConfig } from 'vite'
 import { resolve } from 'path'
 
 const hexToRGBA = (hex: string, opacity: number): string => {
-  let r = parseInt(hex.slice(1, 3), 16)
-  let g = parseInt(hex.slice(3, 5), 16)
-  let b = parseInt(hex.slice(5, 7), 16)
+  const r = parseInt(hex.slice(1, 3), 16)
+  const g = parseInt(hex.slice(3, 5), 16)
+  const b = parseInt(hex.slice(5, 7), 16)
 
   return `rgba(${r},${g},${b},${opacity})`
 }
@@ -29,6 +30,7 @@ export default defineConfig({
             mono: ['Fira Code', 'Fira Mono:400,700'],
           },
         }),
+        presetScrollbar(),
       ],
       transformers: [transformerDirective()],
       rules: [
