@@ -4,15 +4,15 @@ For now is just a experiment project
 
 ## Tech stacks
 
-`tauri` applications with `SvelteKit` as frontend
+`tauri` applications with ~~`SvelteKit`~~ `Svelte` as frontend
 
 - use `plyr` and `openplayerjs` as video player
 - use `unocss` for css design
 
 ### Problems and solved
 
-- [x] `SvelteKit` default use ssr so some client only modules can't be load, and tauri not support ssr, just static. So we need to disable ssr using `hooks.js` and use `@sveltejs/adapter-static` for build
-- [x] Similar, we also need to use clients mode when import browser only library, so I decided use `vite-plugin-iso-import` for adding `?client` suffix into import statement, there some other ways but this one is the best (for now use this for `@tauri-apps/api` and `openplayerjs`)
+- ~~[x] `SvelteKit` default use ssr so some client only modules can't be load, and tauri not support ssr, just static. So we need to disable ssr using `hooks.js` and use `@sveltejs/adapter-static` for build~~ Removed `SvelteKit` because ssr or server render is not my target. It also cause video players can't run on `Safari`
+- ~~[x] Similar, we also need to use clients mode when import browser only library, so I decided use `vite-plugin-iso-import` for adding `?client` suffix into import statement, there some other ways but this one is the best (for now use this for `@tauri-apps/api` and `openplayerjs`)~~ Removed `vite-plugin-iso-import` i don't need this, anymore I'm client only
 
 ## Plan
 

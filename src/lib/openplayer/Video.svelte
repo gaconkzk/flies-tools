@@ -1,6 +1,6 @@
 <script lang="ts">
   import type Player from 'openplayerjs'
-  import OpenPlayerJs from 'openplayerjs?client'
+  import OpenPlayerJs from 'openplayerjs'
   import { nanoid } from 'nanoid'
   import { onMount, onDestroy } from 'svelte'
 

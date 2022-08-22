@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { appWindow } from '@tauri-apps/api/window?client'
+  import { appWindow } from '@tauri-apps/api/window'
 
   import TitleBarButton from './TitleBarButton.svelte'
   import { useTauri } from '$lib/hooks/useTauri'
