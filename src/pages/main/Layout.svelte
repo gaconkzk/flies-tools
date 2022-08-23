@@ -14,18 +14,22 @@
       isTauri.update(() => true)
     }
   })
+
+  let mac = isMac()
 </script>
 
-<TitleBar />
-<div
-  id="flies-tools"
-  class:tauri-top={$isTauri && !isMac()}
-  class:tauri-bottom={$isTauri}
-  class:no-maximized={!$maximize}
->
-  <Main />
-</div>
-<FooterBar />
+{#await mac then val}
+  <TitleBar />
+  <div
+    id="flies-tools"
+    class:tauri-top={$isTauri && !val}
+    class:tauri-bottom={$isTauri}
+    class:no-maximized={!$maximize}
+  >
+    <Main />
+  </div>
+  <FooterBar />
+{/await}
 
 <style>
   #flies-tools {

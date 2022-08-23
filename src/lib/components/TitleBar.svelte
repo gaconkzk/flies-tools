@@ -16,35 +16,39 @@
       console.error(err)
     }
   }
+
+  let mac = isMac()
 </script>
 
-{#if $isTauri && !isMac()}
-  <div
-    data-tauri-drag-region
-    class="titlebar {containerClass ?? ''}"
-    class:titlebar-rounded={!$maximize}
-    {...restProps}
-  >
-    <TitleBarButton
-      id="titlebar-minimize"
-      src="https://api.iconify.design/mdi:window-minimize.svg"
-      alt="minimize"
-      on:click={() => appWindow.minimize()}
-    />
-    <TitleBarButton
-      id="titlebar-minimize"
-      src="https://api.iconify.design/mdi:window-maximize.svg"
-      alt="maximize"
-      on:click={() => toggleMaximize()}
-    />
-    <TitleBarButton
-      id="titlebar-close"
-      src="https://api.iconify.design/mdi:close.svg"
-      alt="close"
-      on:click={() => appWindow.close()}
-    />
-  </div>
-{/if}
+{#await mac then val}
+  {#if $isTauri && !val}
+    <div
+      data-tauri-drag-region
+      class="titlebar {containerClass ?? ''}"
+      class:titlebar-rounded={!$maximize}
+      {...restProps}
+    >
+      <TitleBarButton
+        id="titlebar-minimize"
+        src="https://api.iconify.design/mdi:window-minimize.svg"
+        alt="minimize"
+        on:click={() => appWindow.minimize()}
+      />
+      <TitleBarButton
+        id="titlebar-minimize"
+        src="https://api.iconify.design/mdi:window-maximize.svg"
+        alt="maximize"
+        on:click={() => toggleMaximize()}
+      />
+      <TitleBarButton
+        id="titlebar-close"
+        src="https://api.iconify.design/mdi:close.svg"
+        alt="close"
+        on:click={() => appWindow.close()}
+      />
+    </div>
+  {/if}
+{/await}
 
 <style>
   .titlebar {
