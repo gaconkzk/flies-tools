@@ -21,7 +21,7 @@
 {#if $isTauri}
   <div
     data-tauri-drag-region
-    class="titlebar {containerClass}"
+    class="titlebar {containerClass ?? ''}"
     class:titlebar-rounded={!$maximize}
     {...restProps}
   >

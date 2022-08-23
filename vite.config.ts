@@ -31,7 +31,11 @@ export default defineConfig({
             mono: ['Fira Code', 'Fira Mono:400,700'],
           },
         }),
-        presetScrollbar(),
+        presetScrollbar({
+          scrollbarThumbColor: '#fbfb2240',
+          scrollbarTrackColor: '#00000000',
+          numberToUnit: (v) => `${v / 16}rem`,
+        }),
       ],
       transformers: [transformerDirective()],
       rules: [

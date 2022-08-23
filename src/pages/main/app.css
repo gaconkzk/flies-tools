@@ -18,5 +18,5 @@ h5 {
 }
 
 #app {
-  @apply w-screen h-screen bg-gray-600 rounded-t-2xl;
+  @apply w-screen h-screen flex;
 }
