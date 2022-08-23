@@ -1,8 +1,8 @@
 <script lang="ts">
   import { appWindow } from '@tauri-apps/api/window'
-
   import TitleBarButton from './TitleBarButton.svelte'
   import { useTauri } from '$lib/hooks/useTauri'
+  import { isMac } from '$lib/hooks/useOS'
   const { class: containerClass, ...restProps } = $$props
 
   const { isTauri, maximize } = useTauri()
@@ -18,7 +18,7 @@
   }
 </script>
 
-{#if $isTauri}
+{#if $isTauri && !isMac()}
   <div
     data-tauri-drag-region
     class="titlebar {containerClass ?? ''}"

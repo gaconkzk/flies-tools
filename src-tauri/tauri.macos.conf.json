@@ -1,0 +1,17 @@
+{
+  "tauri": {
+    "macOSPrivateApi": true,
+    "windows": [
+      {
+        "fullscreen": false,
+        "height": 600,
+        "resizable": true,
+        "title": "flies-tools",
+        "width": 800,
+        "center": true,
+        "transparent": true,
+        "decorations": true
+      }
+    ]
+  }
+}
