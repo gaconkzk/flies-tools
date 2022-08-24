@@ -7,8 +7,8 @@
   export const errors = null
 </script>
 
-<div>
-  <main class="min-h-full">
+<div class="ml-45px">
+  <main>
     <Player
       type="openplayer"
       preload="false"

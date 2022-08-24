@@ -34,7 +34,7 @@
 <style>
   #flies-tools {
     @apply bg-gray-800 w-full scrollbar scrollbar-rounded scrollbar-w-6px scrollbar-radius-2 scrollbar-track-radius-4 scrollbar-thumb-radius-4;
-    @apply flex flex-row justify-start;
+    @apply flex flex-row justify-start flex-1;
   }
 
   .tauri-top {
