@@ -11,10 +11,10 @@
   onMount(async () => {
     if (window.__TAURI__) {
       isTauri.update(() => true)
-    }
 
-    let osPlatform = await os.platform()
-    platform.update(() => osPlatform)
+      let osPlatform = await os.platform()
+      platform.update(() => osPlatform)
+    }
   })
 </script>
 
