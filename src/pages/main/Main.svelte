@@ -7,7 +7,7 @@
   export const errors = null
 </script>
 
-<div class="ml-45px">
+<div class="ml-45px w-full">
   <main>
     <Player
       type="openplayer"
