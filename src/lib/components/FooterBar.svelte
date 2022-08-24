@@ -1,10 +1,10 @@
 <script lang="ts">
   import { useTauri } from '$lib/hooks/useTauri'
 
-  const { isTauri } = useTauri()
+  const { isTauri, maximize, platform } = useTauri()
 </script>
 
-{#if $isTauri}
+{#if $isTauri && $maximize && $platform !== 'darwin'}
   <div
     class="fixed bottom-0 left-0 h-4 w-full rounded-b-2xl flex flex-row justify-center items-between"
   >

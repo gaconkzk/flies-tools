@@ -1,8 +1,9 @@
 import { writable } from 'svelte/store'
 
-export const isTauri = writable(false)
-export const maximize = writable(false)
+const isTauri = writable(false)
+const maximize = writable(false)
+const platform = writable('')
 
 export const useTauri = () => {
-  return { isTauri, maximize }
+  return { isTauri, maximize, platform }
 }

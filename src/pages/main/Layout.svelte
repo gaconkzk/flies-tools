@@ -1,35 +1,33 @@
 <script lang="ts">
   import { onMount } from 'svelte'
+  import { os } from '@tauri-apps/api'
   import TitleBar from '$lib/components/TitleBar.svelte'
   import Main from './Main.svelte'
-
-  import { useTauri, maximize } from '$lib/hooks/useTauri'
+  import { useTauri } from '$lib/hooks/useTauri'
   import FooterBar from '$lib/components/FooterBar.svelte'
-  import { isMac } from '$lib/hooks/useOS'
 
-  const { isTauri } = useTauri()
+  const { isTauri, platform, maximize } = useTauri()
 
   onMount(async () => {
     if (window.__TAURI__) {
       isTauri.update(() => true)
     }
-  })
 
-  let mac = isMac()
+    let osPlatform = await os.platform()
+    platform.update(() => osPlatform)
+  })
 </script>
 
-{#await mac then val}
-  <TitleBar />
-  <div
-    id="flies-tools"
-    class:tauri-top={$isTauri && !val}
-    class:tauri-bottom={$isTauri}
-    class:no-maximized={!$maximize}
-  >
-    <Main />
-  </div>
-  <FooterBar />
-{/await}
+<TitleBar />
+<div
+  id="flies-tools"
+  class:tauri-top={$isTauri && $platform !== 'darwin'}
+  class:tauri-bottom={$isTauri && $platform !== 'darwin'}
+  class:no-maximized={$isTauri && !$maximize}
+>
+  <Main />
+</div>
+<FooterBar />
 
 <style>
   #flies-tools {
